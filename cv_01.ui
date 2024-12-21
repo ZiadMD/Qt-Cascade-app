@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>CV_01</class>
+ <widget class="QMainWindow" name="CV_01">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1260</width>
+    <height>730</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>1260</width>
+    <height>730</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>1260</width>
+    <height>730</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Qt Object Detection</string>
+  </property>
+  <property name="windowIcon">
+   <iconset theme="image-x-generic"/>
+  </property>
+  <property name="autoFillBackground">
+   <bool>false</bool>
+  </property>
+  <property name="tabShape">
+   <enum>QTabWidget::TabShape::Rounded</enum>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QPushButton" name="videoOpenButton">
+    <property name="geometry">
+     <rect>
+      <x>720</x>
+      <y>590</y>
+      <width>101</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Open Video</string>
+    </property>
+   </widget>
+   <widget class="Line" name="line_2">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>630</y>
+      <width>968</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Orientation::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="photoOpenButton">
+    <property name="geometry">
+     <rect>
+      <x>390</x>
+      <y>590</y>
+      <width>111</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Open Image</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="photoRightSwitchButton">
+    <property name="geometry">
+     <rect>
+      <x>940</x>
+      <y>662</y>
+      <width>51</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="photoLeftSwitchButton">
+    <property name="geometry">
+     <rect>
+      <x>880</x>
+      <y>662</y>
+      <width>51</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="videoPlayPause">
+    <property name="geometry">
+     <rect>
+      <x>580</x>
+      <y>660</y>
+      <width>41</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="startCameraButton">
+    <property name="geometry">
+     <rect>
+      <x>1050</x>
+      <y>590</y>
+      <width>111</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Start Camera</string>
+    </property>
+   </widget>
+   <widget class="Line" name="line_4">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>570</y>
+      <width>971</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Orientation::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="QLabel" name="currentFileNameLabel">
+    <property name="geometry">
+     <rect>
+      <x>370</x>
+      <y>550</y>
+      <width>871</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="CONSTFILENAME">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>550</y>
+      <width>81</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>File Name:</string>
+    </property>
+   </widget>
+   <widget class="Line" name="line">
+    <property name="geometry">
+     <rect>
+      <x>262</x>
+      <y>10</y>
+      <width>41</width>
+      <height>711</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Orientation::Vertical</enum>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="Detect_Face">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>60</y>
+      <width>221</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Face</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="Detect_Body">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>220</y>
+      <width>231</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Body</string>
+    </property>
+   </widget>
+   <widget class="QWidget" name="formLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>120</y>
+      <width>228</width>
+      <height>101</height>
+     </rect>
+    </property>
+    <layout class="QFormLayout" name="DetectEyeGroup">
+     <item row="0" column="0">
+      <widget class="QCheckBox" name="DetectEyesCheck">
+       <property name="text">
+        <string>Eyes</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QRadioButton" name="EyeRight">
+       <property name="text">
+        <string>Right eye</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QRadioButton" name="EyeLeft">
+       <property name="text">
+        <string>Left eye</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="1">
+      <widget class="QRadioButton" name="EyeBoth">
+       <property name="text">
+        <string>Both eyes</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QLabel" name="MediaBox">
+    <property name="geometry">
+     <rect>
+      <x>296</x>
+      <y>10</y>
+      <width>951</width>
+      <height>531</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionSelect_File">
+   <property name="text">
+    <string>Select File</string>
+   </property>
+  </action>
+  <action name="actionStart_Camera">
+   <property name="text">
+    <string>Start Camera</string>
+   </property>
+  </action>
+  <action name="actionSelect_YOLO_model">
+   <property name="text">
+    <string>Select YOLO model</string>
+   </property>
+  </action>
+  <action name="actionSave_File">
+   <property name="text">
+    <string>Save File</string>
+   </property>
+  </action>
+  <action name="actionOpen_File">
+   <property name="text">
+    <string>Open File</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
