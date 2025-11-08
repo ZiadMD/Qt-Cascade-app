@@ -4,23 +4,23 @@
 Mat FrameConvertor::QImageToCvMat(const QImage &image)
 {
     // Convert QImage to cv::Mat
-    Mat mat;
+    Mat mat, result;
     switch (image.format()) {
     case QImage::Format_RGB32:
     case QImage::Format_ARGB32:
     case QImage::Format_ARGB32_Premultiplied:
         mat = Mat(image.height(), image.width(), CV_8UC4, (void*)image.bits(), image.bytesPerLine());
-        cvtColor(mat, mat, cv::COLOR_BGRA2BGR);
+        cvtColor(mat, result, cv::COLOR_BGRA2BGR);
         break;
     case QImage::Format_RGB888:
         mat = Mat(image.height(), image.width(), CV_8UC3, (void*)image.bits(), image.bytesPerLine());
-        cvtColor(mat, mat, cv::COLOR_RGB2BGR);
+        cvtColor(mat, result, cv::COLOR_RGB2BGR);
         break;
     default:
         qWarning() << "QImage "<< image.format() << "format not supported!";
         break;
     }
-    return mat;
+    return result;
 }
 
 QImage FrameConvertor::CvMatToQImage(const Mat &mat)

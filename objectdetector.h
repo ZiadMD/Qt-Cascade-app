@@ -39,7 +39,7 @@ private:
     std::string bodyDetectorPath = "/home/ziadmoh/CPP_LIBS/opencv-4.10.0/data/haarcascades/haarcascade_fullbody.xml";
     cv::CascadeClassifier bodyCascade;
 
-    void performDetection(cv::Mat& frame, cv::CascadeClassifier& cascade, const cv::Scalar& color);
+    void performDetection(cv::Mat& frame, const cv::Mat& grayFrame, cv::CascadeClassifier& cascade, const cv::Scalar& color);
 
 };
 
