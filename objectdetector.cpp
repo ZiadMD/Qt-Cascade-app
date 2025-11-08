@@ -1,6 +1,12 @@
 #include "objectdetector.h"
 
 void ObjectDetector::detect(cv::Mat& frame) {
+    // Early exit if no detections are enabled
+    if (!settings.detectFace && !settings.detectEyes_R && !settings.detectEyes_L && 
+        !settings.detectEyes_RL && !settings.detectBody) {
+        return;
+    }
+    
     // Convert to grayscale once for all detections (major performance improvement)
     cv::Mat grayFrame;
     cv::cvtColor(frame, grayFrame, cv::COLOR_BGR2GRAY);
