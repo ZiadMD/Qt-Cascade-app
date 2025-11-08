@@ -37,9 +37,9 @@ void CV_01::processFrame()
 
     Detector->detect(Frame);
 
-    currentFrame = FrameConvertor::CvMatToQImage(Frame).scaled(ui->MediaBox->size());
+    currentFrame = FrameConvertor::CvMatToQImage(Frame);
 
-    ui->MediaBox->setPixmap(QPixmap::fromImage(currentFrame));
+    ui->MediaBox->setPixmap(QPixmap::fromImage(currentFrame).scaled(ui->MediaBox->size(), Qt::KeepAspectRatio, Qt::FastTransformation));
 }
 
 /////////////////////////////////////////////////////////////  VIDEOS CONTROLS  ///////////////////////////////////////////////////////////////////
@@ -142,9 +142,9 @@ void CV_01::displayImage()
     Frame = FrameConvertor::QImageToCvMat(img);
     Detector->detect(Frame);
     // Convert the processed cv::Mat back to QImage
-    currentFrame = FrameConvertor::CvMatToQImage(Frame).scaled(ui->MediaBox->size());
+    currentFrame = FrameConvertor::CvMatToQImage(Frame);
 
-    ui->MediaBox->setPixmap(QPixmap::fromImage(currentFrame));
+    ui->MediaBox->setPixmap(QPixmap::fromImage(currentFrame).scaled(ui->MediaBox->size(), Qt::KeepAspectRatio, Qt::FastTransformation));
 
     ui->currentFileNameLabel->setText(tr("Image %1 of %2").arg(currentImageIndex + 1).arg(images.size()));
 
