@@ -63,6 +63,22 @@ Follow these steps to set up the Qt-Cascade-App on your local machine:
 
 ---
 
+## ⚡ Performance Optimizations
+
+The application has been optimized for efficient real-time object detection:
+
+- **Grayscale Conversion Optimization**: Frames are converted to grayscale once per cycle and reused for all detection types, eliminating redundant conversions.
+
+- **Optimized Detection Parameters**: Cascade classifiers use tuned parameters (`scaleFactor: 1.1`, `minNeighbors: 3`, `minSize: 30x30`) to balance speed and accuracy.
+
+- **Early Exit Strategy**: Detection processing is skipped entirely when no detectors are enabled, improving performance during video playback without detection.
+
+- **Fast Frame Scaling**: Uses Qt's `FastTransformation` mode for real-time scaling with maintained aspect ratio.
+
+- **Memory-Safe Conversions**: Frame format conversions use separate output buffers to prevent side effects and ensure thread safety.
+
+---
+
 ## 🙏 Contribution
 
 Contributions are welcome! Feel free to fork the repository and submit a pull request with your proposed changes. Please ensure your code adheres to the project's coding standards and includes proper documentation.
